@@ -2,6 +2,8 @@
 import styles from "./UMScreen.module.css";
 import React, { useState } from "react";
 import CreatableSelect from "react-select/creatable";
+import {database} from '../../Firebase';
+import { collection, addDoc } from "firebase/firestore";
 
 interface Option {
   readonly label: string;
@@ -55,6 +57,60 @@ export default function UMScreen() {
   const [roleValue1, setRoleValue1] = useState<Option | null>();
   const [roleValue2, setRoleValue2] = useState<Option | null>();
   const [roleValue3, setRoleValue3] = useState<Option | null>();
+
+  const addUser1 = async () => {
+    // e.preventDefault();  
+   
+    // try {
+        const docRef = await addDoc(collection(database, "User Management"), {
+          "Intake" : value?.label,
+          "Pathway" : value2?.label,
+          "First Name" : firstName1,
+            "Last Name" : lastName1,
+            "Email" : email1,    
+            "Role" : roleValue1?.label,  
+        });
+        console.log("Document written with ID: ", docRef.id);
+      // } catch (e) {
+      //   console.error("Error adding document: ", e);
+      // }
+}
+
+const addUser2 = async () => {
+  // e.preventDefault();  
+ 
+  // try {
+      const docRef = await addDoc(collection(database, "User Management"), {
+        "Intake" : value?.label,
+        "Pathway" : value2?.label,
+        "First Name" : firstName2,
+          "Last Name" : lastName2,
+          "Email" : email2,    
+          "Role" : roleValue2?.label,  
+      });
+      console.log("Document written with ID: ", docRef.id);
+    // } catch (e) {
+    //   console.error("Error adding document: ", e);
+    // }
+}
+
+const addUser3 = async () => {
+  // e.preventDefault();  
+ 
+  // try {
+      const docRef = await addDoc(collection(database, "User Management"), {
+        "Intake" : value?.label,
+        "Pathway" : value2?.label,
+        "First Name" : firstName3,
+          "Last Name" : lastName3,
+          "Email" : email3,    
+          "Role" : roleValue3?.label,  
+      });
+      console.log("Document written with ID: ", docRef.id);
+    // } catch (e) {
+    //   console.error("Error adding document: ", e);
+    // }
+}
 
   const handleCreate = (inputValue: string) => {
     setIsLoading(true);
@@ -171,20 +227,27 @@ const handleEmailChange1 = (e) => {
 
   const data = () => {
     if (value && value2 && firstName1 && lastName1 && email1 && roleValue1 != null){
+      const result = value?.label +" "+ value2?.label +" " + firstName1 +" " + lastName1 +" " + email1 +" " + roleValue1?.label;
     //@ts-ignore - suppressing an undefined error for values from option selectors, worked fine in testing before supressing
-    console.log(value?.label +" "+ value2?.label +" " + firstName1 +" " + lastName1 +" " + email1 +" " + roleValue1?.label );
+    console.log( result );
+
+    addUser1();
   }
   else
   {
     console.log("Please select a valid Intake and Pathway, also ensure First name, Last name, email. and role are all filled");
   }
   if (value && value2 && firstName2 && lastName2 && email2 && roleValue2 != null){
+    const result2 = value?.label +" "+ value2?.label +" " + firstName2 +" " + lastName2 +" " + email2 +" " + roleValue2?.label;
     //@ts-ignore - suppressing an undefined error for values from option selectors, worked fine in testing before supressing
-    console.log(value?.label +" "+ value2?.label +" " + firstName2 +" " + lastName2 +" " + email2 +" " + roleValue2?.label );
+    console.log( result2 );
+    addUser2();
   }
   if (value && value2 && firstName3 && lastName3 && email3 && roleValue3 != null){
+    const result3 = value?.label +" "+ value2?.label +" " + firstName3 +" " + lastName3 +" " + email3 +" " + roleValue3?.label;
     //@ts-ignore - suppressing an undefined error for values from option selectors, worked fine in testing before supressing
-    console.log(value?.label +" "+ value2?.label +" " + firstName3 +" " + lastName3 +" " + email3 +" " + roleValue3?.label );
+    console.log( result3 );
+    addUser3();
   }
   };
   return (
