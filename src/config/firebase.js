@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, OAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -13,6 +14,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+const db = getFirestore(app);
 const auth = getAuth(app);
 const provider = new OAuthProvider("microsoft.com");
 provider.setCustomParameters({
@@ -20,4 +22,4 @@ provider.setCustomParameters({
   tenant: process.env.REACT_APP_TENANT_ID,
 });
 
-export { auth, provider };
+export { auth, provider, db };

@@ -1,5 +1,6 @@
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../config/firebase";
+import styles from "./MicrosoftLogin.module.css";
 
 export default function MicrosoftLogin({ setIsAuth }) {
   const handleMicrosoftLogin = () => {
@@ -16,8 +17,10 @@ export default function MicrosoftLogin({ setIsAuth }) {
   };
 
   return (
-    <>
-      <button onClick={() => handleMicrosoftLogin()}>Login</button>
-    </>
+    <div className={styles.container}>
+      <button onClick={() => handleMicrosoftLogin()} className={styles.login}>
+        LOGIN
+      </button>
+    </div>
   );
 }

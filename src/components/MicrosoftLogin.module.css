@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  padding: 0.5em 1.5em;
+  font-weight: 600;
+  color: #fd1b97;
+  background: white;
+  cursor: pointer;
+  border-color: #fd1b97;
+  border-width: 1px;
+  font-family: "Segoe UI";
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.login:hover {
+  background: #fd1b97;
+  color: white;
+  border-color: white;
+}

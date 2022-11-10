@@ -1,17 +1,16 @@
-import { useState } from "react";
-import MicrosoftLogin from "./components/MicrosoftLogin";
-import MicrosoftSignOut from "./components/MicrosoftSignOut";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Login } from "./pages/Login";
+import { UserManagement } from "./pages/UserManagement";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false);
   return (
     <>
-      <div> User Management & User Login</div>
-      {!isAuth ? (
-        <MicrosoftLogin setIsAuth={setIsAuth} />
-      ) : (
-        <MicrosoftSignOut setIsAuth={setIsAuth} />
-      )}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/user-management" element={<UserManagement />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

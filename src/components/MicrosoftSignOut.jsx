@@ -1,5 +1,6 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../config/firebase";
+import styles from "./MicrosoftLogin.module.css";
 
 export default function MicrosoftSignOut({ setIsAuth }) {
   const handleMicrosoftSignOut = () => {
@@ -16,8 +17,10 @@ export default function MicrosoftSignOut({ setIsAuth }) {
       });
   };
   return (
-    <>
-      <button onClick={() => handleMicrosoftSignOut()}>Sign Out</button>
-    </>
+    <div className={styles.container}>
+      <button onClick={() => handleMicrosoftSignOut()} className={styles.login}>
+        SIGN OUT
+      </button>
+    </div>
   );
 }
