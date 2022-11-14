@@ -24,10 +24,12 @@ const intakeOptions = [
 ];
 
 const pathOptions = [
-  createOption("Full Stack Developer"),
-  createOption("Advanced Software Developer"),
-  createOption("UX Designer"),
-  createOption("Salesforce Developer"),
+  createOption("Full Stack Developer (Level 4)"),
+  createOption("Advanced Software Developer (Level 5)"),
+  createOption("UX Designer (Level 5)"),
+  createOption("Salesforce Developer (Level 5)"),
+  createOption("Advanced Software Developer (Level 6)"),
+  createOption("UX Designer (Level 6)"),
 ];
 
 const roleOptions = [
@@ -59,9 +61,8 @@ export default function UMScreen() {
   const [roleValue3, setRoleValue3] = useState<Option | null>();
 
   const addUser1 = async () => {
-    // e.preventDefault();  
-   
-    // try {
+
+
         const docRef = await addDoc(collection(database, "User Management"), {
           "Intake" : value?.label,
           "Pathway" : value2?.label,
@@ -71,15 +72,11 @@ export default function UMScreen() {
             "Role" : roleValue1?.label,  
         });
         console.log("Document written with ID: ", docRef.id);
-      // } catch (e) {
-      //   console.error("Error adding document: ", e);
-      // }
+
 }
 
 const addUser2 = async () => {
-  // e.preventDefault();  
- 
-  // try {
+
       const docRef = await addDoc(collection(database, "User Management"), {
         "Intake" : value?.label,
         "Pathway" : value2?.label,
@@ -89,15 +86,11 @@ const addUser2 = async () => {
           "Role" : roleValue2?.label,  
       });
       console.log("Document written with ID: ", docRef.id);
-    // } catch (e) {
-    //   console.error("Error adding document: ", e);
-    // }
+
 }
 
 const addUser3 = async () => {
-  // e.preventDefault();  
- 
-  // try {
+
       const docRef = await addDoc(collection(database, "User Management"), {
         "Intake" : value?.label,
         "Pathway" : value2?.label,
@@ -107,9 +100,7 @@ const addUser3 = async () => {
           "Role" : roleValue3?.label,  
       });
       console.log("Document written with ID: ", docRef.id);
-    // } catch (e) {
-    //   console.error("Error adding document: ", e);
-    // }
+
 }
 
   const handleCreate = (inputValue: string) => {
