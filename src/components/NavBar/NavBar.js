@@ -5,6 +5,8 @@ import React, { useEffect, useState, useRef } from "react";
 export default function NavBar() {
     const [toggle, setToggle] = useState(true);
     const [toggle2, setToggle2] = useState(true);
+    const [toggle3, setToggle3] = useState(true);
+    const [toggle4, setToggle4] = useState(true);
     return (<>
         <div className={styles.top}></div>
         <div className={styles.side}>
@@ -17,6 +19,7 @@ export default function NavBar() {
       </button>
       {toggle && (<>
         <ul className={styles.linkDiv}>
+            1
                 {/* <NavLink >
                   <p>HOME</p>
                 </NavLink>
@@ -39,6 +42,7 @@ export default function NavBar() {
       </button>
       {toggle2 && (<>
         <ul className={styles.linkDiv}>
+            2
                 {/* <NavLink >
                   <p>HOME</p>
                 </NavLink>
@@ -54,13 +58,14 @@ export default function NavBar() {
                 </ul>
                 </> )} 
                 <button 
-            onClick={() => setToggle2(!toggle2)} 
+            onClick={() => setToggle3(!toggle3)} 
             className={styles.menuBtn}
             >
           SUBMISSIONS
       </button>
-      {toggle2 && (<>
+      {toggle3 && (<>
         <ul className={styles.linkDiv}>
+            3
                 {/* <NavLink >
                   <p>HOME</p>
                 </NavLink>
@@ -76,13 +81,14 @@ export default function NavBar() {
                 </ul>
                 </> )} 
                 <button 
-            onClick={() => setToggle2(!toggle2)} 
+            onClick={() => setToggle4(!toggle4)} 
             className={styles.menuBtn}
             >
           RESULTS
       </button>
-      {toggle2 && (<>
+      {toggle4 && (<>
         <ul className={styles.linkDiv}>
+            4
                 {/* <NavLink >
                   <p>HOME</p>
                 </NavLink>
