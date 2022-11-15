@@ -22,4 +22,4 @@ provider.setCustomParameters({
   tenant: process.env.REACT_APP_TENANT_ID,
 });
 
-export { auth, provider, db };
+export { app, auth, provider, db };
