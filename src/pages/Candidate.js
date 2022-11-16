@@ -1,17 +1,12 @@
-import MicrosoftSignOut from "../components/MicrosoftSignOut";
+import MicrosoftSignOut from "../components/auth/MicrosoftSignOut";
 import { useState } from "react";
-import MicrosoftLogin from "../components/MicrosoftLogin";
 
 const Candidate = () => {
   const [isAuth, setIsAuth] = useState(false);
   return (
     <>
       <h1>Candidate Page</h1>
-      {!isAuth ? (
-        <MicrosoftLogin setIsAuth={setIsAuth} />
-      ) : (
-        <MicrosoftSignOut setIsAuth={setIsAuth} />
-      )}
+      <MicrosoftSignOut setIsAuth={setIsAuth} />
     </>
   );
 };

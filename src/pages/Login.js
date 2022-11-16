@@ -1,5 +1,5 @@
-import MicrosoftLogin from "../components/MicrosoftLogin";
-import MicrosoftSignOut from "../components/MicrosoftSignOut";
+import MicrosoftLogin from "../components/auth/MicrosoftLogin";
+import MicrosoftSignOut from "../components/auth/MicrosoftSignOut";
 import { useState } from "react";
 
 export const Login = () => {

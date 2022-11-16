@@ -1,8 +1,8 @@
 import { signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../config/firebase";
+import { auth, provider } from "../../config/firebase";
 import styles from "./MicrosoftLogin.module.css";
 import { useNavigate } from "react-router-dom";
-import { db } from "../config/firebase";
+import { db } from "../../config/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
 export default function MicrosoftLogin({ setIsAuth }) {

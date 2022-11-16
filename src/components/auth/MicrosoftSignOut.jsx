@@ -1,5 +1,5 @@
 import { signOut } from "firebase/auth";
-import { auth } from "../config/firebase";
+import { auth } from "../../config/firebase";
 import styles from "./MicrosoftLogin.module.css";
 import { useNavigate } from "react-router-dom";
 
