@@ -1,0 +1,61 @@
+.top {
+    height: 80px;
+    background: #969696;
+
+}
+
+.side {
+    position:  absolute;
+    width: 120px;
+    height: 100%;
+    background: #BBBBBB;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.linkDiv {
+
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    background: #DCDCDC;
+    width: 240px;
+    height: inherit;
+    position:absolute;
+    left: 120px;
+    top: -16px;
+
+
+}
+
+.links {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 4px 0;
+
+}
+
+.activeLink {
+    background: #DCDCDC;
+    width: 100%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    padding: 4px 0;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.menuBtn {
+    width: 100%;
+    height: 60px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
