@@ -1,19 +1,23 @@
 import styles from './NavBar.module.css';
 import { Link, NavLink } from "react-router-dom";
-import React, { useEffect, useState, useRef } from "react";
+import React, {  useState } from "react";
 
 export default function NavBar() {
-    const [toggle, setToggle] = useState(true);
-    const [toggle2, setToggle2] = useState(true);
-    const [toggle3, setToggle3] = useState(true);
-    const [toggle4, setToggle4] = useState(true);
+    const [toggle, setToggle] = useState(false);
+    const [toggle2, setToggle2] = useState(false);
+    const [toggle3, setToggle3] = useState(false);
+    const [toggle4, setToggle4] = useState(false);
+    
+
+
     return (<>
         <div className={styles.top}></div>
         <div className={styles.side}>
 
         <button 
-            onClick={() => setToggle(!toggle)} 
+             onClick={() => setToggle(!toggle) } 
             className={styles.menuBtn}
+
             >
           HOME
       </button>
@@ -37,6 +41,7 @@ export default function NavBar() {
                 <button 
             onClick={() => setToggle2(!toggle2)} 
             className={styles.menuBtn}
+
             >
           MARKING RUBRIC
       </button>
@@ -60,6 +65,7 @@ export default function NavBar() {
                 <button 
             onClick={() => setToggle3(!toggle3)} 
             className={styles.menuBtn}
+
             >
           SUBMISSIONS
       </button>
@@ -83,6 +89,7 @@ export default function NavBar() {
                 <button 
             onClick={() => setToggle4(!toggle4)} 
             className={styles.menuBtn}
+
             >
           RESULTS
       </button>
