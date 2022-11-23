@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, OAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -22,4 +23,6 @@ provider.setCustomParameters({
   tenant: process.env.REACT_APP_TENANT_ID,
 });
 
-export { app, auth, provider, db };
+const storage = getStorage(app);
+
+export { app, auth, provider, db, storage };
