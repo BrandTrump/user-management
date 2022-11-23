@@ -3,20 +3,26 @@ import { useState } from "react";
 import { storage } from "../../config/firebase";
 import { ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
+import { auth } from "../../config/firebase";
 
-const missionNum = 1;
+const FileUpload = ({ missionNum }) => {
+  const user = auth.currentUser;
 
-const FileUpload = () => {
   const [fileUpload, setFileUpload] = useState(null);
   const uploadFile = () => {
-    if (fileUpload === null) return;
-    const fileRef = ref(
-      storage,
-      `mission${missionNum}/${fileUpload.name + v4()}`
-    );
-    uploadBytes(fileRef, fileUpload).then(() => {
-      alert("file uploaded");
-    });
+    if (user) {
+      const candidateName = user.displayName;
+      if (fileUpload === null) return;
+      const fileRef = ref(
+        storage,
+        `mission${missionNum}/${candidateName}/${fileUpload.name + v4()}`
+      );
+      uploadBytes(fileRef, fileUpload).then(() => {
+        alert("file uploaded");
+      });
+    } else {
+      alert("Please sign-in");
+    }
   };
   return (
     <div>
