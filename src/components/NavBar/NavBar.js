@@ -48,18 +48,10 @@ export default function NavBar() {
       {toggle2 && (<>
         <ul className={styles.linkDiv}>
             2
-                {/* <NavLink >
-                  <p>HOME</p>
+                <NavLink  to="rubric-template/page-1">
+                  <p>CREATE RUBRIC</p>
                 </NavLink>
-                <NavLink >
-                 <p>MARKING RUBRIC</p> 
-                </NavLink>
-                <NavLink  >
-                  <p>SUBMISSION</p>
-                </NavLink>
-                <NavLink  >
-                  <p>RESULTS</p>
-                </NavLink> */}
+    
                 </ul>
                 </> )} 
                 <button 

@@ -1,0 +1,14 @@
+.page {
+    margin: 40px;
+}
+
+.levelButtons {
+    margin: 10px;
+}
+
+.progressBanner {
+    margin: 0;
+    height:60px;
+    width: 100%;
+    background: #BBBBBB;
+}
