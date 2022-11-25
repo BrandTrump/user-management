@@ -4,26 +4,29 @@ import { storage } from "../../config/firebase";
 import { ref, uploadBytes } from "firebase/storage";
 import { v4 } from "uuid";
 import { auth } from "../../config/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const FileUpload = ({ missionNum }) => {
-  const user = auth.currentUser;
-
   const [fileUpload, setFileUpload] = useState(null);
+
   const uploadFile = () => {
-    if (user) {
-      const candidateName = user.displayName;
-      if (fileUpload === null) return;
-      const fileRef = ref(
-        storage,
-        `mission${missionNum}/${candidateName}/${fileUpload.name + v4()}`
-      );
-      uploadBytes(fileRef, fileUpload).then(() => {
-        alert("file uploaded");
-      });
-    } else {
-      alert("Please sign-in");
-    }
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const candidateName = user.displayName;
+        if (fileUpload === null) return;
+        const fileRef = ref(
+          storage,
+          `mission${missionNum}/${candidateName}/${fileUpload.name + v4()}`
+        );
+        uploadBytes(fileRef, fileUpload).then(() => {
+          alert("file uploaded");
+        });
+      } else {
+        alert("Please sign-in");
+      }
+    });
   };
+
   return (
     <div>
       <input
