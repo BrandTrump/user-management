@@ -29,7 +29,18 @@ const ViewSubmission = ({ missionNum }) => {
     <div>
       <button onClick={displayFiles}>Show Files</button>
       {fileList.map((url, id) => {
-        return <iframe src={url} key={id} width="100%" height="550px"></iframe>;
+        return (
+          <iframe
+            src={url}
+            key={id}
+            title="submission"
+            style={{
+              width: "100%",
+              height: "580px",
+              border: "none",
+            }}
+          />
+        );
       })}
     </div>
   );
