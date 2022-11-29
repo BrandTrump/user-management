@@ -5,13 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../../config/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
-export default function MicrosoftLogin({ setIsAuth }) {
+export default function MicrosoftLogin() {
   let navigate = useNavigate();
 
   const handleMicrosoftLogin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        setIsAuth(true);
         localStorage.setItem("isAuth", true);
         console.log(result);
         isTrainer(result.user.email);
