@@ -1,4 +1,5 @@
 import React from "react";
+import MicrosoftSignOut from "../components/auth/MicrosoftSignOut";
 import MissionSelect from "../components/FileUpload/MissionSelect";
 
 const Submission = () => {
@@ -6,6 +7,7 @@ const Submission = () => {
     <div>
       <h2>Mission Submission</h2>
       <MissionSelect />
+      <MicrosoftSignOut />
     </div>
   );
 };

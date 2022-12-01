@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import style from "../../styles/MissionSelect.module.css";
 
 const MissionSelect = () => {
   const missions = [
@@ -10,10 +11,14 @@ const MissionSelect = () => {
     { id: 6, mission: 6 },
   ];
   return (
-    <div>
+    <div className={style.btnContainer}>
       {missions.map((mission, id) => {
         return (
-          <Link to={`/submission/mission/${mission.id}`} key={id}>
+          <Link
+            to={`/candidate/submission/mission/${mission.id}`}
+            key={id}
+            className={style.missionBtn}
+          >
             Mission {mission.id}
           </Link>
         );

@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MissionSelect from "./components/FileUpload/MissionSelect";
 import Candidate from "./pages/Candidate";
 import CandidateSubmissions from "./pages/CandidateSubmissions";
 import { Login } from "./pages/Login";
+import Submission from "./pages/Submission";
 import { Upload } from "./pages/Upload";
 import { UserManagement } from "./pages/UserManagement";
 import { PrivateRoutes } from "./utils/PrivateRoutes";
@@ -17,11 +17,19 @@ function App() {
             <Route exact path="/candidate" element={<Candidate />} />
             <Route
               exact
-              path="/submissions"
+              path="trainer/submissions"
               element={<CandidateSubmissions />}
             />
-            <Route exact path="/submission" element={<MissionSelect />} />
-            <Route exact path="/submission/mission/:id" element={<Upload />} />
+            <Route
+              exact
+              path="/candidate/submission"
+              element={<Submission />}
+            />
+            <Route
+              exact
+              path="/candidate/submission/mission/:id"
+              element={<Upload />}
+            />
           </Route>
           <Route path="/" element={<Login />} />
         </Routes>
