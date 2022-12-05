@@ -27,7 +27,7 @@ export default function MicrosoftLogin() {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((q) => {
       console.log(q.data().role);
-      q.data().role === "candidate"
+      q.data().role === "Candidate"
         ? navigate("/candidate")
         : navigate("/user-management");
     });
