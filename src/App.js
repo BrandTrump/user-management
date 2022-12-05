@@ -4,6 +4,7 @@ import CandidateSubmissions from "./pages/CandidateSubmissions";
 import { Login } from "./pages/Login";
 import Submission from "./pages/Submission";
 import { Upload } from "./pages/Upload";
+import MarkingPage from "./pages/MarkingPage";
 import { UserManagement } from "./pages/UserManagement";
 import { PrivateRoutes } from "./utils/PrivateRoutes";
 
@@ -19,6 +20,11 @@ function App() {
               exact
               path="trainer/submissions"
               element={<CandidateSubmissions />}
+            />
+            <Route
+              exact
+              path="/submissions/candidate/:candidate/:id"
+              element={<MarkingPage />}
             />
             <Route
               exact
