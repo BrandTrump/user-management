@@ -5,13 +5,13 @@ import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { auth } from "../../config/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
-const ViewSubmission = ({ missionNum }) => {
+const ViewSubmission = ({ candidateName, missionNum }) => {
   const [fileList, setFileList] = useState([]);
 
   const displayFiles = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        const candidateName = user.displayName;
+        console.log(candidateName);
         const listRef = ref(storage, `mission${missionNum}/${candidateName}/`);
         listAll(listRef).then((response) => {
           response.items.forEach((item) => {
