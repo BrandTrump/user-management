@@ -14,13 +14,16 @@ const MissionSelect = () => {
     <div className={style.btnContainer}>
       {missions.map((mission, id) => {
         return (
-          <Link
-            to={`/candidate/submission/mission/${mission.id}`}
-            key={id}
-            className={style.missionBtn}
-          >
-            Mission {mission.id}
-          </Link>
+          <div style={{ display: "flex", alignItems: "center", gap: "1em" }}>
+            <Link
+              to={`/candidate/submission/mission/${mission.id}`}
+              key={id}
+              className={style.missionBtn}
+            >
+              Mission {mission.id}
+            </Link>
+            <p style={{ margin: 0 }}>Due Date: 5/12/2022</p>
+          </div>
         );
       })}
     </div>
