@@ -26,7 +26,10 @@ const CandidateSubmissions = () => {
       <div style={{ display: "flex", gap: "1em" }}>
         {candidateList.map((candidateName, id) => {
           return (
-            <Link to={`/submissions/candidate/${candidateName.name}`} key={id}>
+            <Link
+              to={`/submissions/candidate/${candidateName.name}/${id}`}
+              key={id}
+            >
               {candidateName.name}
             </Link>
           );
