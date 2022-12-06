@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Mission Ready HQ Colab
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Usage
 
-In the project directory, you can run:
+### Firebase Authentication 
 
-### `npm start`
+1. Go to Azure portal and sign-in using your Mission Ready email. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Navigate to "Auzre Active Directory" dashboard.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. In the active directory dashboard under manage, find "App registrations".
 
-### `npm test`
+4. On the top left of the Navbar you will need to click on the "New registration" button 
+![image](https://user-images.githubusercontent.com/53203863/206045271-ec030070-aa4b-4427-8e77-4bf64d736337.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. Inside of app registration, simply provide a name for the application and click "Register"
+![image](https://user-images.githubusercontent.com/53203863/206046309-6ef05148-117d-4d4e-8e3f-cb3afae9d319.png)
 
-### `npm run build`
+You will then be redirected back where you can find your "Application (client) ID". The application ID will be used when setting up authentication in Firebase.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. To get the application secret, find "Certificates & secrets" under manage in the side navbar.  
+![image](https://user-images.githubusercontent.com/53203863/206048102-50f0db31-a7c0-47c2-b236-285cbfe185ec.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+7. In the Certificates & secrets tab, click "New client secrets". It is important to keep note of the value key that is generated, that token will be your application secret in Firebase. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
