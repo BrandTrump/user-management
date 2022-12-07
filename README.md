@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 2. Navigate to "Auzre Active Directory" dashboard.
 
-3. In the active directory dashboard, find "App registrations" under manage.
+3. In the active directory dashboard, find and click on "App registrations" under manage.
 
 4. On the top left of the Navbar you will need to click on the "New registration" button 
 ![image](https://user-images.githubusercontent.com/53203863/206045271-ec030070-aa4b-4427-8e77-4bf64d736337.png)
