@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../config/firebase";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const CandidateSubmissions = () => {
+  const { missionID } = useParams();
   const [candidateList, setCandidateList] = useState([]);
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const CandidateSubmissions = () => {
         {candidateList.map((candidateName, id) => {
           return (
             <Link
-              to={`/submissions/candidate/${candidateName.name}/${id}`}
+              to={`/submissions/mission/${missionID}/${candidateName.name}`}
               key={id}
             >
               {candidateName.name}

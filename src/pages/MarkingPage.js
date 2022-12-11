@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import MicrosoftSignOut from "../components/auth/MicrosoftSignOut";
-import ViewSubmission from "../components/FileUpload/ViewSubmission";
+import ViewSubmission from "../components/ViewSubmissions/ViewSubmission";
 
 const MarkingPage = () => {
   const { candidate, id } = useParams();
