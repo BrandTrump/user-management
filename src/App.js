@@ -7,6 +7,7 @@ import { Upload } from "./pages/Upload";
 import MarkingPage from "./pages/MarkingPage";
 import { UserManagement } from "./pages/UserManagement";
 import { PrivateRoutes } from "./utils/PrivateRoutes";
+import SelectMissionForMarking from "./pages/SelectMissionForMarking";
 
 function App() {
   return (
@@ -18,12 +19,17 @@ function App() {
             <Route exact path="/candidate" element={<Candidate />} />
             <Route
               exact
-              path="trainer/submissions"
+              path="/submissions"
+              element={<SelectMissionForMarking />}
+            />
+            <Route
+              exact
+              path="/submissions/mission/:missionID"
               element={<CandidateSubmissions />}
             />
             <Route
               exact
-              path="/submissions/candidate/:candidate/:id"
+              path="/submissions/mission/:id/:candidate"
               element={<MarkingPage />}
             />
             <Route
