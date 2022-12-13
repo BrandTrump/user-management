@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import CreatableSelect from "react-select/creatable";
 import { db } from '../../config/firebase';
 import { collection, addDoc } from "firebase/firestore";
+import NavBar from "../NavBar/NavBar"
 
 interface Option {
   readonly label: string;
@@ -243,6 +244,8 @@ const handleEmailChange1 = (e) => {
   };
   return (
     <>
+    <NavBar />
+    <div className={styles.page}>
       <div className={styles.upperSection}>
         <div className={styles.selectionSection}>
           <h3 className={styles.titles}>Select Intake</h3>
@@ -365,6 +368,7 @@ const handleEmailChange1 = (e) => {
         </div>
       </div>
       <button onClick={data}>Add</button>
+      </div>
     </>
   );
 }

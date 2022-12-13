@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Mission Ready HQ Colab
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Intended Outcome & Project Requirements
+The intended outcome of this application is to bridge the collaboration gap between the trainers and candidates. The requirements for this project are to streamline the processes from publishing / submitting each mission and providing feedback to the candidates and vice versa. Spreadsheets have been the age-old method of marking candidate submissions which have worked ok but are not ideal for many reasons addressed by the requirements of this project. 
 
-## Available Scripts
+The core requirements for this  project include
+- Publishing missions 
+- Tracking candidate progress 
+- Provide a feedback channel 
+- Perform project matching
+- Integration with the attendance platform
+- Provide push notifications. 
 
-In the project directory, you can run:
+The technical goals for this project are to create a low latency, reliable and secure service.
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Firebase 
+1. Create a .env file with the following variable names
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://user-images.githubusercontent.com/53203863/207180620-7e5e53e0-f0e5-40b0-bc8d-ea55a4e19c3d.png)
 
-### `npm test`
+2. Go to the projects Firebase dashboard and find "Project settings"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://user-images.githubusercontent.com/53203863/207181173-dd1b082c-883d-4a89-9f4f-e729922c0aac.png)
 
-### `npm run build`
+3. At the bottom of the project settings page you will find "SDK setup and configuration". 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![image](https://user-images.githubusercontent.com/53203863/207182417-6743941d-5195-4540-a984-fdeba84c713c.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Copy across the values you can see for apiKey, authDomain, projectId, storageBucket, messagingSenderId, appId and place them inside of the .env file you created.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. For the Tenant ID vist the Azure Active Directory Portal and sign in with your Mission Ready e-mail.
 
-### `npm run eject`
+![image](https://user-images.githubusercontent.com/53203863/207184350-3d16cc87-2fcb-4219-b6e7-847535af1b47.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+6. After signing in, at the Azure Active Directory dashboard find "App registrations" under "Manage" on the left sidebar. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://user-images.githubusercontent.com/53203863/207184818-f053f440-a197-4e30-9319-62dea06dcb1d.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+7. Under the "All applications" tab search for "MRColab" then click on the appliction that is found.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![image](https://user-images.githubusercontent.com/53203863/207185418-8e56d364-e550-4e44-a60a-3ba566cef78b.png)
 
-## Learn More
+8. For the final step, in the overview tab find the "Directory (tenant) ID" and copy across the value you see to the .env file you created earlier.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
