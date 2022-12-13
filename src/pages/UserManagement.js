@@ -6,7 +6,7 @@ export const UserManagement = () => {
   const [isAuth, setIsAuth] = useState(false);
   return (
     <>
-      <h1>User Management</h1>
+
       <UMScreen />
       <MicrosoftSignOut setIsAuth={setIsAuth} />
     </>

@@ -7,6 +7,7 @@ export default function NavBar() {
     const [toggle2, setToggle2] = useState(false);
     const [toggle3, setToggle3] = useState(false);
     const [toggle4, setToggle4] = useState(false);
+    const [isActive, setIsActive] = useState(false);
     
 
 
@@ -38,29 +39,18 @@ export default function NavBar() {
                 </NavLink> */}
                 </ul>
                 </> )}   
-                <button 
-            onClick={() => setToggle2(!toggle2)} 
-            className={styles.menuBtn}
 
-            >
+            
+
+            
+          <NavLink  to="/rubric-template/page-1" className={({ isActive }) => (isActive ? styles.menuBtnActive : styles.menuBtn)}>
           MARKING RUBRIC
-      </button>
-      {toggle2 && (<>
-        <ul className={styles.linkDiv}>
-            2
-                <NavLink  to="rubric-template/page-1">
-                  <p>CREATE RUBRIC</p>
-                </NavLink>
-    
-                </ul>
-                </> )} 
-                <button 
-            onClick={() => setToggle3(!toggle3)} 
-            className={styles.menuBtn}
+          </NavLink>
 
-            >
+     
+          <NavLink  to="/find-rubrics" className={styles.menuBtn}>
           SUBMISSIONS
-      </button>
+          </NavLink>
       {toggle3 && (<>
         <ul className={styles.linkDiv}>
             3
