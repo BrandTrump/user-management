@@ -8,6 +8,7 @@ import MarkingPage from "./pages/MarkingPage";
 import { UserManagement } from "./pages/UserManagement";
 import { PrivateRoutes } from "./utils/PrivateRoutes";
 import SelectMissionForMarking from "./pages/SelectMissionForMarking";
+import PermissionDenied from "./pages/PermissionDenied";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             />
           </Route>
           <Route path="/" element={<Login />} />
+          <Route path="/denied" element={<PermissionDenied />} />
         </Routes>
       </BrowserRouter>
     </>

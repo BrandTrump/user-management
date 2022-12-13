@@ -21,9 +21,9 @@ export default function MicrosoftLogin() {
       });
   };
 
-  const isTrainer = async (result) => {
+  const isTrainer = async (userEmail) => {
     const usersRef = collection(db, "users");
-    const q = query(usersRef, where("email", "==", result));
+    const q = query(usersRef, where("email", "==", userEmail));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((q) => {
       console.log(q.data().role);
