@@ -1,0 +1,21 @@
+.btnContainer {
+  display: flex;
+  gap: 1em;
+  flex-direction: column;
+}
+
+.missionBtn {
+  text-decoration: none;
+  color: #fd1b97;
+  background-color: white;
+  border: 1px solid #fd1b97;
+  width: 4em;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+}
+
+.missionBtn:hover {
+  background: #fd1b97;
+  color: white;
+  border-color: white;
+}

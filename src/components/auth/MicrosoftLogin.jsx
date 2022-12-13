@@ -5,13 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../../config/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
-export default function MicrosoftLogin({ setIsAuth }) {
+export default function MicrosoftLogin() {
   let navigate = useNavigate();
 
   const handleMicrosoftLogin = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        setIsAuth(true);
         localStorage.setItem("isAuth", true);
         console.log(result);
         isTrainer(result.user.email);
@@ -22,13 +21,13 @@ export default function MicrosoftLogin({ setIsAuth }) {
       });
   };
 
-  const isTrainer = async (result) => {
+  const isTrainer = async (userEmail) => {
     const usersRef = collection(db, "users");
-    const q = query(usersRef, where("email", "==", result));
+    const q = query(usersRef, where("email", "==", userEmail));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((q) => {
       console.log(q.data().role);
-      q.data().role === "candidate"
+      q.data().role === "Candidate"
         ? navigate("/candidate")
         : navigate("/user-management");
     });

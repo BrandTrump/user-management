@@ -3,14 +3,13 @@ import { auth } from "../../config/firebase";
 import styles from "./MicrosoftLogin.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function MicrosoftSignOut({ setIsAuth }) {
+export default function MicrosoftSignOut() {
   let navigate = useNavigate();
   const handleMicrosoftSignOut = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
         localStorage.clear();
-        setIsAuth(false);
         console.log("Sign-out successful");
         navigate("/");
       })
