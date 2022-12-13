@@ -1,14 +1,14 @@
 import MicrosoftSignOut from "../components/auth/MicrosoftSignOut";
 import { useState } from "react";
-import LearningObjectivesComponent from "../components/rubric-template/LearningOutcomes.tsx";
+import {LearningOutcomes, PublishRubric} from "../components/rubric-template/LearningOutcomes.tsx";
+import { LearningOutcomesComp } from "../components/rubric-template/LearningOutcomes.tsx";
 
 export default function LearningObjectives () {
     const [isAuth, setIsAuth] = useState(false);
     
     return (
         <div>
-            <LearningObjectivesComponent />
-        Lol
+            <LearningOutcomesComp />
         <MicrosoftSignOut setIsAuth={setIsAuth} />
         </div>
         );
